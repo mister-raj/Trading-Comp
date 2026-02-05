@@ -1,50 +1,93 @@
-# Trading-Comp
+# Trading Comparables Valuation Model
 
-**Title:** Trading Comparables Analysis: Indian Banking Sector
+## Overview
 
----
+This project builds a **Trading Comparables valuation model** for listed Indian banking companies to estimate relative valuation and derive implied share prices using market multiples.
 
-### **Project Overview**
+## Selected Publicly listed Indian banks:
 
-This project performs a **Trading Comparables (Trading Comps)** analysis to evaluate the relative valuation of major Indian banking and financial institutions.
+* State Bank of India
+* HDFC Bank
+* ICICI Bank
+* Axis Bank
+* Kotak Mahindra Bank
+* IndusInd Bank
+* Bank of Baroda
+* Punjab National Bank
+* Canara Bank
+* Union Bank of India
+* Federal Bank
+* IDFC First Bank
 
-### **Data Sources**
+## Data Captured
 
-* **Market Data:** NSE India (National Stock Exchange).
-* **Financial Year Reference:** Historical data from 2023, 2024, and estimates/actuals for 2025.
-
-### **Methodology**
-
-The analysis assesses companies based on the following parameters:
-
-**1. Market Data:**
+### Market Data
 
 * Current Share Price
-* Share Count
+* Shares Outstanding
 * Market Capitalization
-* Enterprise Value (EV)
+* Enterprise Value
 
-**2. Financial Performance (2023–2025):**
+### Financial Metrics (FY23–FY25)
 
 * Revenue
 * EBITDA
 * Net Income
 
-**3. Growth & Margins:**
+### Growth Metrics
 
-* Revenue Growth (Year-over-Year)
-* EBITDA Margins
-* Net Profit Margins
+* Revenue Growth
+* EBITDA Growth
 
-**4. Valuation Multiples:**
+### Profitability
 
-* **EV / Revenue:** Measures how much investors pay for each unit of sales.
-* **EV / EBITDA:** A proxy for operating cash flow valuation, neutral to capital structure.
-* **P / E (Price to Earnings):** Standard metric for equity valuation.
+* EBITDA Margin
+* Profit Margin
 
+---
 
-### **Key Outputs**
+## Trading Multiples Calculated
 
-* **Peer Benchmarking:** Side-by-side comparison of valuation metrics.
-* **Sector Averages:** Calculation of **Mean** and **Median** multiples for the sector, which serves as a baseline for determining if a specific stock is overvalued or undervalued relative to its peers.
+* **EV / Revenue** → Value per ₹ of sales
+* **EV / EBITDA** → Value per ₹ of operating profit
+* **P / E** → Value per ₹ of net earnings
 
+Mean and median peer multiples are computed to normalize outliers.
+
+---
+
+## Valuation Methodology
+
+1. Select comparable peer group
+2. Compute trading multiples
+3. Derive peer mean / median benchmarks
+4. Apply multiples to target company financials
+5. Estimate Enterprise Value
+6. Convert to Equity Value:
+
+[
+Equity\ Value = EV + Cash - Debt
+]
+
+7. Divide by shares outstanding → **Implied Share Price**
+
+---
+
+## Implied Valuation Outputs
+
+The model generates valuation ranges based on:
+
+* Minimum peer multiple
+* Mean multiple
+* Median multiple
+* Maximum multiple
+
+This produces a **valuation band** instead of a single point estimate.
+
+If you want, I can:
+
+* Expand this into a **full repo (model + memo + deck)**
+* Add **formula documentation**
+* Write a **case-study style report**
+
+Just say the direction.
